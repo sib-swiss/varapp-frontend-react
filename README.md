@@ -6,6 +6,8 @@ This is the ReactJS web interface from Varapp.
 
 #### Build from source
 
+Works with NodeJS version 10.
+
     sudo yum -y install nodejs
     sudo npm install npm -g
     sudo gem install sass   # requires Ruby
