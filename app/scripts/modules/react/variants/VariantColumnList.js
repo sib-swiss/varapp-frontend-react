@@ -264,28 +264,6 @@ var COLUMN_DEF = {
         cellRenderer: formatters.formatScientific,
         type: TYPES.QUALITY
     },
-    //gq_mean: {
-    //    key: "gq_mean",
-    //    order: 106,
-    //    label: "Mean genotype qual",
-    //    width: SCORE_WIDTH,
-    //    minWidth: SCORE_WIDTH,
-    //    flexGrow: 1,
-    //    dataKey: "gq_mean",
-    //    cellRenderer: formatters.formatScientific,
-    //    type: TYPES.QUALITY,
-    //},
-    //gq_stdev: {
-    //    key: "gq_stdev",
-    //    order: 107,
-    //    label: "Genotype qual SD",
-    //    width: SCORE_WIDTH,
-    //    minWidth: SCORE_WIDTH,
-    //    flexGrow: 1,
-    //    dataKey: "gq_stdev",
-    //    cellRenderer: formatters.formatScientific,
-    //    type: TYPES.QUALITY,
-    //},
     base_qual_rank_sum: {
         key: "base_qual_rank_sum",
         order: 108,
@@ -330,17 +308,6 @@ var COLUMN_DEF = {
         cellRenderer: formatters.formatScientific,
         type: TYPES.QUALITY,
     },
-    //vqslod: {
-    //    key: "vqslod",
-    //    order: 112,
-    //    label: "VQSR score",
-    //    width: SCORE_WIDTH,
-    //    minWidth: SCORE_WIDTH,
-    //    flexGrow: 1,
-    //    dataKey: "vqslod",
-    //    cellRenderer: formatters.formatScientific,
-    //    type: TYPES.QUALITY,
-    //},
     read_depth: {
         key: "read_depth",
         order: 113,
@@ -363,7 +330,7 @@ var COLUMN_DEF = {
         width: 100,
         flexGrow: 1,
         dataKey: 'type',
-        tyle: TYPES.IMPACT
+        type: TYPES.IMPACT
     },
     aa_change: {
         key: "aa_change",
@@ -436,9 +403,20 @@ var COLUMN_DEF = {
         cellRenderer: formatters.formatExac,
         type: TYPES.FREQUENCY
     },
+    aaf_gnomad_all: {
+        key: "aaf_gnomad_all",
+        order: 304,
+        label: "GnomAD frequency",
+        width: FREQ_WIDTH,
+        minWidth: FREQ_WIDTH,
+        flexGrow: 1,
+        dataKey: "aaf_gnomad_all",
+        cellRenderer: formatters.formatGnomad,
+        type: TYPES.FREQUENCY
+    },
     aaf_max_all: {
         key: "aaf_max_all",
-        order: 304,
+        order: 305,
         label: "Max frequency",
         width: FREQ_WIDTH,
         minWidth: FREQ_WIDTH,
@@ -449,7 +427,7 @@ var COLUMN_DEF = {
     },
     allele_freq: {
         key: "allele_freq",
-        order: 305,
+        order: 306,
         label: "Allele frequency",
         width: FREQ_WIDTH,
         minWidth: FREQ_WIDTH,
@@ -460,7 +438,7 @@ var COLUMN_DEF = {
     },
     allele_count: {
         key: "allele_count",
-        order: 306,
+        order: 307,
         label: "Allele count",
         width: INTEGER_WIDTH,
         minWidth: INTEGER_WIDTH,
@@ -504,16 +482,16 @@ var COLUMN_DEF = {
         dataKey: "clinvar_sig",
         type: TYPES.PATHOGENICITY
     },
-    clinvar_disease_acc: {
-        key: "clinvar_disease_acc",
-        order: 404,
-        label: "Clinvar disease acc.",
-        width: 140,
-        flexGrow: 1,
-        dataKey: "clinvar_disease_acc",
-        cellRenderer: formatters.formatClinVar,
-        type: TYPES.PATHOGENICITY
-    },
+    // clinvar_disease_acc: {
+    //     key: "clinvar_disease_acc",
+    //     order: 404,
+    //     label: "Clinvar disease acc.",
+    //     width: 140,
+    //     flexGrow: 1,
+    //     dataKey: "clinvar_disease_acc",
+    //     cellRenderer: formatters.formatClinVar,
+    //     type: TYPES.PATHOGENICITY
+    // },
     gerp_bp_score: {
         key: "gerp_bp_score",
         order: 405,

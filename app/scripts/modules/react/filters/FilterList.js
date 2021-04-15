@@ -194,6 +194,14 @@ var filters = [
     },
     {
         group: FREQUENCY_GROUP,
+        name: 'GnomAD frequency',
+        field: 'aaf_gnomad_all',
+        op: '<=',
+        reverse: true,
+        type: FilterConstants.FILTER_TYPE_FREQUENCY,
+    },
+    {
+        group: FREQUENCY_GROUP,
         name: 'Max frequency',
         field: 'aaf_max_all',
         op: '<=',
