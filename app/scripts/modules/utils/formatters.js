@@ -18,8 +18,8 @@ var ASC = UtilsConstants.ASC;
    baseUrl: service's API base URL
    text: what gets displayed in the table cell
 */
-var refLink = function(id, baseUrl, text) {
-    return (<a className="xref-link link external" href={baseUrl + id}
+var refLink = function(id, baseUrl, text, queryParams = '') {
+    return (<a className="xref-link link external" href={baseUrl + id + queryParams}
               target="__VARAPP_XREF__">{text}</a>);
 };
 
@@ -109,7 +109,12 @@ var formatEntrezId = function (entrez_id) {
 var formatExac = function(freq, field, v) {
     if (! freq) {return '';}
     var id = sprintf('%s-%s-%s-%s', v.chrom.replace('chr',''), v.start, v.ref, v.alt);
-    return refLink(id, UtilsConstants.EXAC_LINK, formatFrequency(v.aaf_exac_all));
+    return refLink(id, UtilsConstants.EXAC_LINK, formatFrequency(v.aaf_exac_all), UtilsConstants.EXAC_QUERY_PARAMS);
+};
+var formatGnomad = function(freq, field, v) {
+    if (! freq) {return '';}
+    var id = sprintf('%s-%s-%s-%s', v.chrom.replace('chr',''), v.start, v.ref, v.alt);
+    return refLink(id, UtilsConstants.GNOMAD_LINK, formatFrequency(v.aaf_gnomad_all), UtilsConstants.GNOMAD_QUERY_PARAMS);
 };
 
 /* Lookup */
@@ -302,6 +307,7 @@ module.exports = {
     formatEnsemblId,
     formatEntrezId,
     formatExac,
+    formatGnomad,
     formatClinVar,
     formatSource,
     formatAAChange,
