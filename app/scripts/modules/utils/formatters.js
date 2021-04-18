@@ -18,8 +18,8 @@ var ASC = UtilsConstants.ASC;
    baseUrl: service's API base URL
    text: what gets displayed in the table cell
 */
-var refLink = function(id, baseUrl, text, queryParams = '') {
-    return (<a className="xref-link link external" href={baseUrl + id + queryParams}
+var refLink = function(id, baseUrl, text, queryParams) {
+    return (<a className="xref-link link external" href={baseUrl + id + (queryParams || '')}
               target="__VARAPP_XREF__">{text}</a>);
 };
 
